@@ -1,4 +1,4 @@
-const { user, thought } = require('./models');
+const { user, thought } = require('../../models');
 
 module.exports = {
     getUser(req, res) {
@@ -7,7 +7,7 @@ module.exports = {
             .catch(err => res.status(400).json(err));
 },
 
-    getSingleThought(req, res) {
+    getSingleUser(req, res) {
     User.findOne({ _id: req.params.id })
         .populate('thoughts')
         .populate('friends')
